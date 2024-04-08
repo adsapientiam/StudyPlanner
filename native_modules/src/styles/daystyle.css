@@ -1,0 +1,119 @@
+#weekdays div{
+    flex-basis:14.285714285714286%;
+}
+
+#weekdays, #monthdays{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+#monthdays{
+    align-content: space-around;
+}
+
+#weekdays div{
+    font-variant:small-caps;
+    text-align:center;
+    visibility:visible;
+}
+
+.shell-day{
+    flex-basis:14.285714285714286%;
+    /* whatever it be there has to be a normal day */
+    height:10px; 
+    box-sizing:border-box;
+}
+
+/* Maybe make so first day even shell gets the weeknumber*/
+
+.day {
+    border:4px double black;
+    flex-basis:14.285714285714286%;
+    min-height:140px; 
+    box-sizing:border-box;
+    overflow:hidden;
+    padding-bottom:5px;
+}
+
+.day:nth-child(7n+1)::before {
+    content:attr(data-week);
+    font-weight: bold;
+    position:absolute;
+    margin-left:2px
+}
+
+.day-content{
+    /*So that .subjectBlobs' top margins won't make too much white space*/
+    margin-top:-2.75px;
+    padding-left:3.5%;
+
+    display:flex;
+    flex-wrap:wrap;
+
+}
+
+.date{
+    font-size:18px;
+    text-align:center
+}
+
+.subjectBlob {
+    border-style:solid;
+    border-radius:10%;
+    margin-top:3px;
+    margin-left:3%;
+    flex-basis:40%;
+    height:fit-content;
+    max-height:45px;
+    overflow:hidden;
+}
+
+.subjectBlobDesc{
+    margin-top:-3px;
+    padding-left:2px;
+    padding-right:1px;
+    font-size:10px;
+    word-break:break-all;
+    line-height: 9px;
+}
+
+.subjectBlobDuration{
+    font-size:9.5px;
+    text-decoration: underline;
+}
+
+#subjectBlobDurationDiv{  
+    text-align:center;
+    margin-top:-4px;
+    margin-bottom:1px;
+}
+
+@media screen and (max-width:777px){
+    .date{
+        font-size:16px;
+        margin-top:-2px
+    }
+
+    .day:nth-child(7n+1)::before {
+        font-size:10px;
+    }
+
+    #subjectBlobDurationDiv{
+        margin-top:-4px;
+    }
+
+    .day-content{
+        padding-left:3%;
+        display:block;
+        flex-wrap:none;
+    }
+
+    .subjectBlob{
+        width:85%;
+        max-height:36px;
+    }
+
+    .day:nth-child(7n+1)::before {
+        margin-left:0px
+    }
+}

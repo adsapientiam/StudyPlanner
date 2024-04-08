@@ -1,0 +1,147 @@
+/* For some reason the app wants to detect the non-existant studyplanner.css that inexplicably didn't work due to text/html format wrong... so now its content is here*/
+:root{
+    --arrow-width:15px;
+    --arrow-height:10px;
+
+    --arrow-width-smol: 12px;
+    --arrow-height-smol: 8px;
+
+    --arrow-width-large: 20px;
+    --arrow-height-large: 15px;
+}
+
+textarea{
+    font-family:arial;
+    border-radius:5%; 
+    border: 0.5px outset lightgrey;
+}
+
+#editor{
+    position:sticky;
+}
+
+#editor-date{
+    text-align:center
+}
+
+#editor-date-info{
+    padding:3px;
+    display:inline-block;
+    width:100%;
+}
+
+/*For these to work you need to center #editor-date and have its size to just fit the text and the arrows*/
+.arrow{
+    border-top: var(--arrow-height) solid transparent;
+    border-bottom: var(--arrow-height) solid transparent;
+    cursor:pointer;
+}
+
+#arrow-left{
+    float:left; 
+    border-right: var(--arrow-width) solid #7e7c7c;
+}
+
+#arrow-right{
+    float:right;
+    border-left: var(--arrow-width) solid #7e7c7c;
+}
+
+#arrow-left:hover{border-right: var(--arrow-width) solid#2ECC71} 
+#arrow-right:hover{border-left: var(--arrow-width) solid#2ECC71}
+
+
+#inputs{
+    text-align: center;
+}
+
+.time-input{
+    width:32px;
+    font-size:14px;
+}
+
+.time-input, #subjects{
+    border-radius: 8%;
+    border: 0.5px outset lightgrey
+}
+
+.description{
+    width:95%;
+    resize:vertical;
+}
+
+.btn{
+    border-radius: 10%;
+}
+
+.todo{
+    margin-top:3%;
+    text-align: center;
+    padding:3px;
+}
+
+.deleteBtn{
+    background-color: red;
+    border-color:darkred;
+    font-size:10px; 
+}
+
+.testBtn{
+    color:white;
+    background-color:black;
+    border-color:black;
+    word-break:break-all;
+    font-size:13px
+    
+}
+
+#todayText{
+    font-size:16px;
+}
+
+@media screen and (max-width:778px){
+    textarea,
+    #descriptionBtn, .testBtn, 
+    .time-input, #subjects{
+        font-size:16px;
+        
+    }
+
+    .testBtn, .deleteBtn{
+        margin-right:2.5%;
+    }
+
+    #inputs, #startTime, #endTime,
+    #todayText, .todo-duration-subject{
+        font-size:18px;
+    }
+
+    .time-input{
+        width:36px;
+    }
+
+    .deleteBtn{
+        font-size:12px;
+    }
+
+    .arrow{
+        border-top: var(--arrow-height-large) solid transparent;
+        border-bottom: var(--arrow-height-large) solid transparent;
+    }
+
+    #arrow-left{
+        float:left;
+        margin-left:20%;
+        border-right:var(--arrow-width-large) solid #7e7c7c;
+    }
+
+    #arrow-right{
+        float:right;
+        margin-right:20%;
+        border-left:var(--arrow-width-large) solid #7e7c7c;
+    }
+
+    #arrow-left:hover{border-right: var(--arrow-width-large) solid#2ECC71} 
+    #arrow-right:hover{border-left: var(--arrow-width-large) solid#2ECC71}
+
+}
