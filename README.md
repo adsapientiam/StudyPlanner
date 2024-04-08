@@ -18,5 +18,5 @@ For each passed week, the previous week is deleted.
 #### The Day object
 The Day object is a container of Todo objects.
 
-### The Todo object
+#### The Todo object
 The Todo object is an object pertaining to a specific subject and which has a description for what the current study session will be about.
